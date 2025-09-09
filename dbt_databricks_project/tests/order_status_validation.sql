@@ -1,8 +1,4 @@
-{{% test order_status_is_valid(model, column) %}}
-
 select
-  {{ column }}
-from {{ model }}
-where {{ column }} not in ('PENDING', 'COMPLETE', 'DELIVERED', 'CANCELED')
-
-{{% endtest %}}
+  *
+from {{ ref('bronze_orders') }}
+where order_status not in ('PENDING', 'COMPLETE', 'DELIVERED', 'CANCELED')

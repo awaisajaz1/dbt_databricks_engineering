@@ -20,10 +20,11 @@ models:
       - name: order_status
         description: "The current status of the order (e.g., pending, shipped, delivered)."
         data_tests:
-          - accepted_values:
-              values: ['PENDING', 'COMPLETE', 'DELIVERED', 'CANCELED']
-              config:
-                severity: warn
+          - generic_order_status_validation
+          # - accepted_values:
+          #     values: ['PENDING', 'COMPLETE', 'DELIVERED', 'CANCELED']
+          #     config:
+          #       severity: warn
     config:
       materialized: table
       sort:
