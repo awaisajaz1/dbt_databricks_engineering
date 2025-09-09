@@ -1,4 +1,5 @@
 {{ config(materialized='view') }}
-
-select * from 
+select 
+* 
+from 
 {{ source('dlt_demo', 'customers') }};

@@ -1,1 +1,3 @@
-select * from {{ source('dlt_demo', 'orders') }}
+select 
+* 
+from {{ source('dlt_demo', 'orders') }}

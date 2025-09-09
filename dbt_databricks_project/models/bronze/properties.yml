@@ -3,6 +3,27 @@ version: 2
 models:
   - name: bronze_orders
     description: "This table contains raw order data ingested from the source system."
+    columns:
+      - name: order_id
+        description: "The unique identifier for each order."
+        data_tests:
+          - unique
+          - not_null
+      - name: order_customer_id
+        description: "The unique identifier for the customer who placed the order."
+        data_tests:
+          - not_null
+      - name: order_date
+        description: "The date when the order was placed."
+        data_tests:
+          - not_null
+      - name: order_status
+        description: "The current status of the order (e.g., pending, shipped, delivered)."
+        data_tests:
+          - accepted_values:
+              values: ['PENDING', 'COMPLETE', 'DELIVERED', 'CANCELED']
+              config:
+                severity: warn
     config:
       materialized: table
       sort:
