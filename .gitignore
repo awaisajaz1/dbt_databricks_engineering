@@ -1,0 +1,7 @@
+
+target/
+dbt_packages/
+logs/
+dbt_databricks_project/profiles.yml
+venv/
+.env

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: bronze_orders
+    description: "This table contains raw order data ingested from the source system."
+    config:
+      materialized: table
+      sort:
+        - order_date
+  - name: bronze_customers
+    description: "This table contains raw customer data ingested from the source system."
+    config:
+      materialized: table

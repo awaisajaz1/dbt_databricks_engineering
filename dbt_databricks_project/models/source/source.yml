@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: dlt_demo
+    database: dlt_demo
+    schema: source
+    tables:
+      - name: orders
+        description: "Table containing order data"
+      - name: customers   
+        description: "Table containing customer data"
